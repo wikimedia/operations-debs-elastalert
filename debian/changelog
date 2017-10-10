@@ -1,0 +1,5 @@
+elastalert (0.1.20-1) unstable; urgency=medium
+
+  * Initial release (Closes: #876963)
+
+ -- Sophie Brun <sophie@freexian.com>  Tue, 10 Oct 2017 10:15:50 +0200
