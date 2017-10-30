@@ -4,17 +4,25 @@ Priority: optional
 Maintainer: Sophie Brun <sophie@freexian.com>
 Build-Depends: debhelper (>= 10), dh-python, python-all, python-setuptools, python-sphinx, python-sphinx-rtd-theme,
 # for the tests
+ python-aws-requests-auth,
  python-blist,
  python-boto3,
  python-configparser,
  python-croniter,
  python-dateutil,
  python-elasticsearch,
+ python-envparse,
+ python-exotel,
+ python-jira,
  python-jsonschema,
  python-mock,
+ python-pytest,
  python-requests,
  python-simplejson,
+ python-staticconf,
+ python-stomp,
  python-texttable,
+ python-twilio,
  python-yaml
 Standards-Version: 4.1.1
 Homepage: https://github.com/Yelp/elastalert
