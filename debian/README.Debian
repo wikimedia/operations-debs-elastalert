@@ -1,0 +1,11 @@
+Elastalert Debian package
+-------------------------
+
+elastalert requires a config.yaml.
+
+You can find an example of this file in /usr/share/doc/elastalert/examples
+
+By default config.yaml is searched in current directory. You can change
+this with the option --config (see elastalert -h)
+
+ -- Sophie Brun <sophie@freexian.com> Tue, 31 Oct 2017 09:57:50 + 0200
