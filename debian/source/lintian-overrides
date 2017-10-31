@@ -1,0 +1,2 @@
+# elastalert is Python 2 only so we use python-sphinx only
+elastalert source: build-depends-on-python-sphinx-only

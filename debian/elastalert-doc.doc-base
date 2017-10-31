@@ -1,0 +1,10 @@
+Document: elastalert
+Title: elastalert Manual
+Author: Yelp
+Abstract: This manual describes what elastalert is
+ and how it can be used.
+Section: Data Management
+
+Format: HTML
+Index: /usr/share/doc/elastalert-doc/html/index.html
+Files: /usr/share/doc/elastalert-doc/html/*.html
