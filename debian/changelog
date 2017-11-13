@@ -1,4 +1,4 @@
-elastalert (0.1.21-1) UNRELEASED; urgency=medium
+elastalert (0.1.21-1) unstable; urgency=medium
 
   * Initial release (Closes: #876963)
 

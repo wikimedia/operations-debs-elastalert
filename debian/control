@@ -2,7 +2,13 @@ Source: elastalert
 Section: python
 Priority: optional
 Maintainer: Sophie Brun <sophie@freexian.com>
-Build-Depends: debhelper (>= 10), dh-python, python-all, python-setuptools, python-sphinx, python-sphinx-rtd-theme,
+Build-Depends:
+ debhelper (>= 10),
+ dh-python,
+ python-all,
+ python-setuptools,
+ python-sphinx,
+ python-sphinx-rtd-theme,
 # for the tests
  python-aws-requests-auth,
  python-blist,
@@ -28,7 +34,7 @@ Standards-Version: 4.1.1
 Homepage: https://github.com/Yelp/elastalert
 X-Python-Version: >= 2.7
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/elastalert.git
-Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/elastalert.git/
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/elastalert.git
 
 Package: elastalert
 Architecture: all
@@ -80,4 +86,4 @@ Description: easy and flexible alerting with Elasticsearch (documentation)
  This is configured by a set of rules, each of which defines a query, a rule
  type, and a set of alerts.  .
  .
- This is the common documentation package.
+ This is the documentation package.
