@@ -3,7 +3,7 @@ Section: python
 Priority: optional
 Maintainer: Sophie Brun <sophie@freexian.com>
 Build-Depends:
- debhelper (>= 10),
+ debhelper (>= 11),
  dh-python,
  python-all,
  python-setuptools,
