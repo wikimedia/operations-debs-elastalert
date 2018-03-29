@@ -1,3 +1,9 @@
+elastalert (0.1.29-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Sophie Brun <sophie@freexian.com>  Thu, 29 Mar 2018 15:18:39 +0200
+
 elastalert (0.1.28-1) unstable; urgency=medium
 
   * New upstream release.
