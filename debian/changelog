@@ -1,7 +1,11 @@
-elastalert (0.1.29-1) UNRELEASED; urgency=medium
+elastalert (0.1.29-1) unstable; urgency=medium
 
+  [ Sophie Brun ]
   * New upstream release
   * Add a patch to fix failing tests (Closes: #892615)
+
+  [ Raphaël Hertzog ]
+  * Bump build-dep on python-pytest to >= 3.3 for the above patch.
 
  -- Sophie Brun <sophie@freexian.com>  Thu, 29 Mar 2018 16:50:23 +0200
 

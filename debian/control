@@ -23,7 +23,7 @@ Build-Depends:
  python-jira,
  python-jsonschema,
  python-mock,
- python-pytest,
+ python-pytest (>= 3.3),
  python-requests,
  python-simplejson,
  python-staticconf,
