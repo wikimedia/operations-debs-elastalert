@@ -1,5 +1,5 @@
 Description: Fix failing tests with pytest 3.3
- Reverse an upstream patch to make tests run sucessfully with pytest 3.3
+ Reverse an upstream patch to make tests run successfully with pytest 3.3
 Author: Quentin Long <qlo@yelp.com>
 Origin: https://github.com/Yelp/elastalert/commit/e0cab84634dc8cb38e91a954b340f60a8158c059
 Last-Update: 2018-03-30
