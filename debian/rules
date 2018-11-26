@@ -2,6 +2,7 @@
 
 # by default pybuild installs files in debian/python-elastalert
 export PYBUILD_DESTDIR_python2=debian/elastalert
+export PYBUILD_TEST_ARGS="-k-test_auth_aws_region"
 
 %:
 	dh $@ --with python2,sphinxdoc --buildsystem=pybuild
