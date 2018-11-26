@@ -2,7 +2,7 @@ Source: elastalert
 Section: python
 Priority: optional
 Maintainer: Sophie Brun <sophie@freexian.com>
-Uploaders: Raphaël Hertzog <hertzog@debian.org>
+Uploaders: Raphaël Hertzog <hertzog@debian.org>, Sebastien Delafond <seb@debian.org>
 Build-Depends:
  debhelper (>= 11),
  dh-python,
