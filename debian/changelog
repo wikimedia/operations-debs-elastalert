@@ -1,3 +1,9 @@
+elastalert (0.1.39-1) UNRELEASED; urgency=medium
+
+  * New upstream version 0.1.39
+
+ -- Filippo Giunchedi <filippo@debian.org>  Mon, 08 Apr 2019 16:16:56 +0200
+
 elastalert (0.1.29-2) unstable; urgency=medium
 
   [ Ondřej Nový ]

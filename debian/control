@@ -14,6 +14,7 @@ Build-Depends:
  python-aws-requests-auth,
  python-blist,
  python-boto3,
+ python-cffi,
  python-configparser,
  python-croniter,
  python-dateutil,
@@ -22,13 +23,14 @@ Build-Depends:
  python-exotel,
  python-jira,
  python-jsonschema,
+ python-magic,
  python-mock,
  python-pytest (>= 3.3),
  python-requests,
- python-simplejson,
  python-staticconf,
  python-stomp,
  python-texttable,
+ python-thehive4py,
  python-twilio,
  python-yaml
 Standards-Version: 4.1.3
