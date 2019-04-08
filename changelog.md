@@ -1,8 +1,135 @@
 # Change Log
 
+# v0.1.39
+
+### Added
+- Added spike alerts for metric aggregations
+- Allow SSL connections for Stomp
+- Allow limits on alert text length
+- Add optional min doc count for terms queries
+- Add ability to index into arrays for alert_text_args, etc
+
+### Fixed
+- Fixed bug involving --config flag with create-index
+- Fixed some settings not being inherited from the config properly
+- Some fixes for Hive alerter
+- Close SMTP connections properly
+- Fix timestamps in Pagerduty v2 payload
+- Fixed an bug causing aggregated alerts to mix up
+
+# v0.1.38
+
+### Added
+- Added PagerTree alerter
+- Added Line alerter
+- Added more customizable logging
+- Added new logic in test-rule to detemine the default timeframe
+
+### Fixed
+- Fixed an issue causing buffer_time to sometimes be ignored
+
+# v0.1.37
+
+### Added
+- Added more options for Opsgenie alerter
+- Added more pagerduty options
+- Added ability to add metadata to elastalert logs
+
+### Fixed
+- Fixed some documentation to be more clear
+- Stop requiring doc_type for metric aggregations
+- No longer puts quotes around regex terms in blacklists or whitelists
+
+# v0.1.36
+
+### Added
+- Added a prefix "metric_" to the key used for metric aggregations to avoid possible conflicts
+- Added option to skip Alerta certificate validation
+
+### Fixed
+- Fixed a typo in the documentation for spike rule
+
+# v0.1.35
+
+### Fixed
+- Fixed an issue preventing new term rule from working with terms query
+
+# v0.1.34
+
+### Added
+- Added prefix/suffix support for summary table
+- Added support for ignoring SSL validation in Slack
+- More visible exceptions during query parse failures
+
+### Fixed
+- Fixed top_count_keys when using compound query_key
+- Fixed num_hits sometimes being reported too low
+- Fixed an issue with setting ES_USERNAME via env
+- Fixed an issue when using test script with custom timestamps
+- Fixed a unicode error when using Telegram
+- Fixed an issue with jsonschema version conflict
+- Fixed an issue with nested timestamps in cardinality type
+
+# v0.1.33
+
+### Added
+- Added ability to pipe alert text to a command
+- Add --start and --end support for elastalert-test-rule
+- Added ability to turn blacklist/whitelist files into queries for better performance
+- Allow setting of OpsGenie priority
+- Add ability to query the adjacent index if timestamp_field not used for index timestamping
+- Add support for pagerduty v2
+- Add option to turn off .raw/.keyword field postfixing in new term rule
+- Added --use-downloaded feature for elastalert-test-rule
+
+### Fixed
+- Fixed a bug that caused num_hits in matches to sometimes be erroneously small
+- Fixed an issue with HTTP Post alerter that could cause it to hang indefinitely
+- Fixed some issues with string formatting for various alerters
+- Fixed a couple of incorrect parts of the documentation
+
+# v0.1.32
+
+### Added
+- Add support for setting ES url prefix via environment var
+- Add support for using native Slack fields in alerts
+
+### Fixed
+- Fixed a bug that would could scrolling queries to sometimes terminate early
+
+# v0.1.31
+
+### Added
+- Added ability to add start date to new term rule
+
+### Fixed
+- Fixed a bug in create_index which would try to delete a nonexistent index
+- Apply filters to new term rule all terms query
+- Support Elasticsearch 6 for new term rule
+- Fixed is_enabled not working on rule changes
+
+
+# v0.1.30
+
+### Added
+- Alerta alerter
+- Added support for transitioning JIRA issues
+- Option to recreate index in elastalert-create-index
+
+### Fixed
+- Update jira_ custom fields before each alert if they were modified
+- Use json instead of simplejson
+- Allow for relative path for smtp_auth_file
+- Fixed some grammar issues
+- Better code formatting of index mappings
+- Better formatting and size limit for HipChat HTML
+- Fixed gif link in readme for kibana plugin
+- Fixed elastalert-test-rule with Elasticsearch > 4
+- Added documentation for is_enabled option
+
 ## v0.1.29
 
-###
+### Added
 - Added a feature forget_keys to prevent realerting when using flatline with query_key
 - Added a new alert_text_type, aggregation_summary_only
 
