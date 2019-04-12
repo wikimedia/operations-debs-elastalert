@@ -1,3 +1,10 @@
+elastalert (0.1.39-1~bpo9+1) stretch-wikimedia; urgency=medium
+
+  * Rebuild for stretch-wikimedia.
+  ** Drop unneeded dependencies for this backport
+
+ -- Filippo Giunchedi <filippo@debian.org>  Tue, 09 Apr 2019 12:51:11 +0200
+
 elastalert (0.1.39-1) UNRELEASED; urgency=medium
 
   * New upstream version 0.1.39

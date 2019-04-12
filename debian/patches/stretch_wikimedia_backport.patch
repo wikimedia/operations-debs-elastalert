@@ -1,0 +1,121 @@
+Description: Remove unneeded dependencies for a WMF stretch backport
+
+---
+--- elastalert-0.1.39.orig/elastalert/alerts.py
++++ elastalert-0.1.39/elastalert/alerts.py
+@@ -21,20 +21,10 @@ from socket import error
+ 
+ import boto3
+ import requests
+-import stomp
+-from exotel import Exotel
+-from jira.client import JIRA
+-from jira.exceptions import JIRAError
+ from requests.auth import HTTPProxyAuth
+ from requests.exceptions import RequestException
+ from staticconf.loader import yaml_loader
+ from texttable import Texttable
+-from thehive4py.api import TheHiveApi
+-from thehive4py.models import Alert
+-from thehive4py.models import AlertArtifact
+-from thehive4py.models import CustomFieldHelper
+-from twilio.base.exceptions import TwilioRestException
+-from twilio.rest import Client as TwilioClient
+ from util import EAException
+ from util import elastalert_logger
+ from util import lookup_es_key
+--- elastalert-0.1.39.orig/elastalert/config.py
++++ elastalert-0.1.39/elastalert/config.py
+@@ -66,9 +66,7 @@ rules_mapping = {
+ # Used to map names of alerts to their classes
+ alerts_mapping = {
+     'email': alerts.EmailAlerter,
+-    'jira': alerts.JiraAlerter,
+     'opsgenie': OpsGenieAlerter,
+-    'stomp': alerts.StompAlerter,
+     'debug': alerts.DebugAlerter,
+     'command': alerts.CommandAlerter,
+     'sns': alerts.SnsAlerter,
+@@ -79,8 +77,6 @@ alerts_mapping = {
+     'mattermost': alerts.MattermostAlerter,
+     'pagerduty': alerts.PagerDutyAlerter,
+     'pagertree': alerts.PagerTreeAlerter,
+-    'exotel': alerts.ExotelAlerter,
+-    'twilio': alerts.TwilioAlerter,
+     'victorops': alerts.VictorOpsAlerter,
+     'telegram': alerts.TelegramAlerter,
+     'googlechat': alerts.GoogleChatAlerter,
+@@ -89,7 +85,6 @@ alerts_mapping = {
+     'linenotify': alerts.LineNotifyAlerter,
+     'alerta': alerts.AlertaAlerter,
+     'post': alerts.HTTPPostAlerter,
+-    'hivealerter': alerts.HiveAlerter
+ }
+ # A partial ordering of alert types. Relative order will be preserved in the resulting alerts list
+ # For example, jira goes before email so the ticket # will be added to the resulting email.
+--- elastalert-0.1.39.orig/requirements.txt
++++ elastalert-0.1.39/requirements.txt
+@@ -1,21 +1,15 @@
+-aws-requests-auth>=0.3.0
+ blist>=1.3.6
+ boto3>=1.4.4
+ configparser>=3.5.0
+ croniter>=0.3.16
+ elasticsearch
+ envparse>=0.2.0
+-exotel>=0.1.3
+-jira>=1.0.10,<1.0.15
+ jsonschema>=2.6.0
+ mock>=2.0.0
+ PyStaticConfiguration>=0.10.3
+ python-dateutil>=2.6.0,<2.7.0
+ PyYAML>=3.12
+ requests>=2.0.0
+-stomp.py>=4.1.17
+ texttable>=0.8.8
+-twilio==6.0.0
+-thehive4py>=1.4.4
+ python-magic>=0.4.15
+ cffi>=1.11.5
+--- elastalert-0.1.39.orig/setup.py
++++ elastalert-0.1.39/setup.py
+@@ -27,25 +27,19 @@ setup(
+     packages=find_packages(),
+     package_data={'elastalert': ['schema.yaml']},
+     install_requires=[
+-        'aws-requests-auth>=0.3.0',
+         'blist>=1.3.6',
+         'boto3>=1.4.4',
+         'configparser>=3.5.0',
+         'croniter>=0.3.16',
+         'elasticsearch',
+         'envparse>=0.2.0',
+-        'exotel>=0.1.3',
+-        'jira>=1.0.10,<1.0.15',
+         'jsonschema>=2.6.0,<3.0.0',
+         'mock>=2.0.0',
+         'PyStaticConfiguration>=0.10.3',
+         'python-dateutil>=2.6.0,<2.7.0',
+         'PyYAML>=3.12',
+         'requests>=2.10.0',
+-        'stomp.py>=4.1.17',
+         'texttable>=0.8.8',
+-        'twilio>=6.0.0,<6.1',
+-        'thehive4py>=1.4.4',
+         'python-magic>=0.4.15',
+         'cffi>=1.11.5'
+     ]
+--- elastalert-0.1.39.orig/elastalert/auth.py
++++ elastalert-0.1.39/elastalert/auth.py
+@@ -1,10 +1,9 @@
+ # -*- coding: utf-8 -*-
+ import os
+ import boto3
+-from aws_requests_auth.aws_auth import AWSRequestsAuth
+ 
+ 
+-class RefeshableAWSRequestsAuth(AWSRequestsAuth):
++class RefeshableAWSRequestsAuth(object):
+     """
+     A class ensuring that AWS request signing uses a refreshed credential
+     """
